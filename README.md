@@ -1,2 +1,1 @@
-# food-delivery
-Food delivery app design
+# 🍔 Food Delivery
