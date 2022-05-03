@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import logo from "../assets/logo.png"
 import login from "../assets/login.png"
 
 import VisibilityIcon from "../icons/Visibility";
-import {useState} from "react";
 
 const Login = () => {
 
