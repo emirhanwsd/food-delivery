@@ -7,6 +7,7 @@ module.exports = {
             colors: {
                 primary: "#4E60FF",
                 primaryHover: "#697BFF",
+                primaryLight: "#F3F4FF",
                 neutralBlack: "#2B2B43",
                 neutralGray: "#83859C",
                 neutralGrayLight: "#C7C8D2",
@@ -17,5 +18,5 @@ module.exports = {
     },
     plugins: [
         require("@tailwindcss/forms")
-    ],
+    ]
 }
