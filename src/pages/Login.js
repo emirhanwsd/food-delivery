@@ -10,8 +10,8 @@ const Login = () => {
 
     return (
         <div className="h-full flex">
-            <div className="w-2/5">
-                <div className="h-full w-96 mx-auto flex flex-col justify-between pt-5 pb-10">
+            <div className="w-full sm:w-2/5 px-4 sm:px-0">
+                <div className="h-full w-full sm:w-96 mx-auto flex flex-col justify-between pt-5 pb-10">
                     <div>
                         <img src={logo}/>
                     </div>
@@ -66,7 +66,7 @@ const Login = () => {
                 </div>
             </div>
 
-            <div className="flex-1 bg-primaryHover flex flex-col items-center justify-between pt-8 pb-20">
+            <div className="hidden sm:flex flex-1 bg-primaryHover flex-col items-center justify-between pt-8 pb-20">
                 <img src={login}/>
 
                 <div className="max-w-lg flex flex-col items-center gap-y-4">
