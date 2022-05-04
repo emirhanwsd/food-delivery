@@ -139,7 +139,7 @@ const Home = () => {
                             }
 
                             addSelectedCategory(category.id)
-                        }} className={`h-24 w-48 flex flex-col items-center justify-center gap-y-3 select-none rounded-2xl cursor-pointer transition-colors ${isSelectedCategory(category.id) ? "bg-primaryLight border-2 border-primary hover:bg-primaryLightest hover:border-primaryHover" : "border border-neutralGrayLight hover:bg-primaryLightest hover:border-primaryHover"}`}>
+                        }} className={`h-24 w-48 flex flex-col items-center justify-center gap-y-3 rounded-2xl cursor-pointer transition-colors ${isSelectedCategory(category.id) ? "bg-primaryLight border-2 border-primary hover:bg-primaryLightest hover:border-primaryHover" : "border border-neutralGrayLight hover:bg-primaryLightest hover:border-primaryHover"}`}>
                             {category.icon}
 
                             <h5 className={`text-sm font-bold ${isSelectedCategory(category.id) ? "text-primary" : "text-neutralGrayDark"}`}>{category.title}</h5>
