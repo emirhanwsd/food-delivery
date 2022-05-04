@@ -1,5 +1,7 @@
 import logo from "../assets/logo.png"
 import avatar from "../assets/avatar.png"
+import dessert from "../assets/dessert.png"
+import hamburger from "../assets/hamburger.png"
 
 import SearchIcon from "../icons/Search";
 import BasketIcon from "../icons/Basket";
@@ -8,7 +10,7 @@ const Home = () => {
 
     return (
         <div className="h-full">
-            <nav className="h-20 flex items-center justify-between px-36 border-b border-b-neutralGrayLightest">
+            <nav className="h-20 flex items-center justify-between px-64 border-b border-b-neutralGrayLightest">
                 <div className="flex gap-x-12">
                     <img src={logo}/>
 
@@ -42,6 +44,34 @@ const Home = () => {
                     </div>
                 </div>
             </nav>
+
+            <header className="h-64 px-64 py-5">
+                <div className="h-full flex items-center gap-x-8">
+                    <a href="#" className="h-full flex w-1/2 group overflow-hidden gap-x-4 pr-8 bg-primaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
+                        <img className="group-hover:scale-105 transition-transform" src={dessert}/>
+
+                        <div className="flex flex-col pt-6 pb-4">
+                            <h5 className="text-xl font-bold text-neutralBlack mb-3">All deserts</h5>
+
+                            <h1 className="text-5xl font-extrabold text-primary uppercase">20% Off</h1>
+
+                            <h6 className="text-neutralGray mt-auto">Deserty</h6>
+                        </div>
+                    </a>
+
+                    <a href="#" className="h-full flex-1 group overflow-hidden flex gap-x-4 pr-8 bg-secondaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
+                        <img className="group-hover:scale-105 transition-transform" src={hamburger}/>
+
+                        <div className="flex flex-col pt-6 pb-4">
+                            <h5 className="text-xl font-bold text-neutralBlack mb-3">Big Burgers</h5>
+
+                            <h1 className="text-5xl font-extrabold text-secondary uppercase">50% Off</h1>
+
+                            <h6 className="text-neutralGray mt-auto">Fooddies</h6>
+                        </div>
+                    </a>
+                </div>
+            </header>
         </div>
     )
 }
