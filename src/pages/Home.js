@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import logo from "../assets/logo.png"
 import avatar from "../assets/avatar.png"
 import dessert from "../assets/dessert.png"
@@ -5,8 +7,61 @@ import hamburger from "../assets/hamburger.png"
 
 import SearchIcon from "../icons/Search";
 import BasketIcon from "../icons/Basket";
+import PizzaIcon from "../icons/Pizza";
+import BurgerIcon from "../icons/Burger";
+import BBQIcon from "../icons/BBQ";
+import SushiIcon from "../icons/Sushi";
+import VeganIcon from "../icons/Vegan";
+import DessertIcon from "../icons/Dessert";
+
+const categories = [
+    {
+        id: 0,
+        title: "Pizza",
+        icon: <PizzaIcon/>
+    },
+    {
+        id: 1,
+        title: "Burger",
+        icon: <BurgerIcon/>
+    },
+    {
+        id: 2,
+        title: "BBQ",
+        icon: <BBQIcon/>
+    },
+    {
+        id: 3,
+        title: "Sushi",
+        icon: <SushiIcon/>
+    },
+    {
+        id: 4,
+        title: "Vegan",
+        icon: <VeganIcon/>
+    },
+    {
+        id: 5,
+        title: "Dessert",
+        icon: <DessertIcon/>
+    }
+]
 
 const Home = () => {
+
+    const [selectedCategories, setSelectedCategories] = useState([])
+
+    const isSelectedCategory = id => {
+        return selectedCategories.includes(id)
+    }
+
+    const addSelectedCategory = id => {
+        setSelectedCategories([...selectedCategories, id])
+    }
+
+    const removeSelectedCategory = id => {
+        setSelectedCategories(selectedCategories.filter(selectedCategory => selectedCategory !== id))
+    }
 
     return (
         <div className="h-full">
@@ -45,33 +100,53 @@ const Home = () => {
                 </div>
             </nav>
 
-            <header className="h-64 px-64 py-5">
-                <div className="h-full flex items-center gap-x-8">
-                    <a href="#" className="h-full flex w-1/2 group overflow-hidden gap-x-4 pr-8 bg-primaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
-                        <img className="group-hover:scale-105 transition-transform" src={dessert}/>
+            <div className="px-64">
+                <header className="h-64 py-5">
+                    <div className="h-full flex items-center gap-x-8">
+                        <div className="h-full flex w-1/2 group overflow-hidden gap-x-4 pr-8 bg-primaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
+                            <img className="group-hover:scale-105 transition-transform" src={dessert}/>
 
-                        <div className="flex flex-col pt-6 pb-4">
-                            <h5 className="text-xl font-bold text-neutralBlack mb-3">All deserts</h5>
+                            <div className="flex flex-col pt-6 pb-4">
+                                <h5 className="text-xl font-bold text-neutralBlack mb-3">All deserts</h5>
 
-                            <h1 className="text-5xl font-extrabold text-primary uppercase">20% Off</h1>
+                                <h1 className="text-5xl font-extrabold text-primary uppercase">20% Off</h1>
 
-                            <h6 className="text-neutralGray mt-auto">Deserty</h6>
+                                <h6 className="text-neutralGray mt-auto">Deserty</h6>
+                            </div>
                         </div>
-                    </a>
 
-                    <a href="#" className="h-full flex-1 group overflow-hidden flex gap-x-4 pr-8 bg-secondaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
-                        <img className="group-hover:scale-105 transition-transform" src={hamburger}/>
+                        <div className="h-full flex-1 group overflow-hidden flex gap-x-4 pr-8 bg-secondaryLight rounded-2xl cursor-pointer hover:shadow transition-shadow">
+                            <img className="group-hover:scale-105 transition-transform" src={hamburger}/>
 
-                        <div className="flex flex-col pt-6 pb-4">
-                            <h5 className="text-xl font-bold text-neutralBlack mb-3">Big Burgers</h5>
+                            <div className="flex flex-col pt-6 pb-4">
+                                <h5 className="text-xl font-bold text-neutralBlack mb-3">Big Burgers</h5>
 
-                            <h1 className="text-5xl font-extrabold text-secondary uppercase">50% Off</h1>
+                                <h1 className="text-5xl font-extrabold text-secondary uppercase">50% Off</h1>
 
-                            <h6 className="text-neutralGray mt-auto">Fooddies</h6>
+                                <h6 className="text-neutralGray mt-auto">Fooddies</h6>
+                            </div>
                         </div>
-                    </a>
+                    </div>
+                </header>
+
+                <div className="flex items-center justify-between py-5">
+                    {categories.map(category => (
+                        <div key={category.id} onClick={() => {
+                            if (isSelectedCategory(category.id)){
+                                removeSelectedCategory(category.id)
+
+                                return
+                            }
+
+                            addSelectedCategory(category.id)
+                        }} className={`h-24 w-48 flex flex-col items-center justify-center gap-y-3 select-none rounded-2xl cursor-pointer transition-colors ${isSelectedCategory(category.id) ? "bg-primaryLight border-2 border-primary hover:bg-primaryLightest hover:border-primaryHover" : "border border-neutralGrayLight hover:bg-primaryLightest hover:border-primaryHover"}`}>
+                            {category.icon}
+
+                            <h5 className={`text-sm font-bold ${isSelectedCategory(category.id) ? "text-primary" : "text-neutralGrayDark"}`}>{category.title}</h5>
+                        </div>
+                    ))}
                 </div>
-            </header>
+            </div>
         </div>
     )
 }
