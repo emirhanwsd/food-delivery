@@ -80,12 +80,12 @@ const Home = () => {
 
                 <div className="flex gap-x-5 items-center">
                     <div className="flex gap-x-7 pr-5 py-1 border-r border-r-neutralGrayLightest">
-                        <a className="text-neutralBlack font-bold hover:text-neutralGrayDark transition-colors" href="#">Restaurants</a>
-                        <a className="text-neutralBlack font-bold hover:text-neutralGrayDark transition-colors" href="#">Deals</a>
+                        <a className="text-neutralBlack font-semibold hover:text-neutralGrayDark transition-colors" href="#">Restaurants</a>
+                        <a className="text-neutralBlack font-semibold hover:text-neutralGrayDark transition-colors" href="#">Deals</a>
                     </div>
 
                     <div className="flex items-center">
-                        <a className="text-neutralBlack font-bold hover:text-neutralGrayDark transition-colors mr-7" href="#">My orders</a>
+                        <a className="text-neutralBlack font-semibold hover:text-neutralGrayDark transition-colors mr-7" href="#">My orders</a>
 
                         <a href="#" className="h-12 w-12 relative flex items-center justify-center bg-primaryLight rounded-2xl hover:bg-neutralGrayLightest transition-colors mr-4">
                             <BasketIcon/>
