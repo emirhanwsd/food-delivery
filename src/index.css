@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    user-select: none;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
     color: inherit;
