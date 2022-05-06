@@ -14,7 +14,7 @@ const Login = () => {
             <div className="w-full sm:w-2/5 px-4 sm:px-0">
                 <div className="h-full w-full sm:w-96 mx-auto flex flex-col justify-between pt-5 pb-10">
                     <div>
-                        <img src={logo}/>
+                        <img src={logo} alt="Logo"/>
                     </div>
 
                     <div className="flex flex-col">
@@ -60,15 +60,15 @@ const Login = () => {
                             <button type="submit" className="w-full h-11 rounded-lg text-white font-semibold bg-primary hover:bg-primaryHover shadow-xl transition-colors">Login</button>
                         </form>
 
-                        <a href="#" className="text-center text-primaryHover font-bold hover:text-primary transition-colors">Forgot Password</a>
+                        <a href="/" className="text-center text-primaryHover font-bold hover:text-primary transition-colors">Forgot Password</a>
                     </div>
 
-                    <p className="text-center text-neutralGrayDark">Don't have an account? <a href="#" className="text-primary font-bold hover:text-primaryHover transition-colors">Sign up</a></p>
+                    <p className="text-center text-neutralGrayDark">Don't have an account? <a href="/" className="text-primary font-bold hover:text-primaryHover transition-colors">Sign up</a></p>
                 </div>
             </div>
 
             <div className="hidden sm:flex flex-1 bg-primaryHover flex-col items-center justify-between pt-8 pb-20">
-                <img src={login}/>
+                <img src={login} alt="Login"/>
 
                 <div className="max-w-lg flex flex-col items-center gap-y-4">
                     <h1 className="text-3xl text-white font-bold">Leave reviews for all meals</h1>
