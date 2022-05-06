@@ -4,6 +4,9 @@ import logo from "../assets/logo.png"
 import avatar from "../assets/avatar.png"
 import dessert from "../assets/dessert.png"
 import hamburger from "../assets/hamburger.png"
+import royalSushiHouse from "../assets/royal-sushi-house.png"
+import burgersAndPizza from "../assets/burgers-and-pizza.png"
+import ninjaSushi from "../assets/ninja-sushi.png"
 
 import SearchIcon from "../icons/Search";
 import BasketIcon from "../icons/Basket";
@@ -13,6 +16,7 @@ import BBQIcon from "../icons/BBQ";
 import SushiIcon from "../icons/Sushi";
 import VeganIcon from "../icons/Vegan";
 import DessertIcon from "../icons/Dessert";
+import ClockIcon from "../icons/Clock";
 
 const categories = [
     {
@@ -44,6 +48,58 @@ const categories = [
         id: 5,
         title: "Dessert",
         icon: <DessertIcon/>
+    }
+]
+
+const nearbyRestaurants = [
+    {
+        id: 0,
+        title: "Royal Sushi House",
+        image: royalSushiHouse,
+        minimumTime: "30-40",
+        minimumSum: 32,
+        order: 0,
+        featured: true,
+        tags: [
+            {
+                title: "Sushi",
+                icon: <SushiIcon/>
+            }
+        ]
+    },
+    {
+        id: 1,
+        title: "Burgers & Pizza",
+        image: burgersAndPizza,
+        minimumTime: "40-60",
+        minimumSum: 24,
+        order: 2,
+        featured: true,
+        tags: [
+            {
+                title: "Burger",
+                icon: <BurgerIcon/>
+            },
+            {
+                title: "Pizza",
+                icon: <PizzaIcon/>
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Ninja Sushi",
+        image: ninjaSushi,
+        minimumTime: "20-40",
+        minimumSum: 40,
+        order: 0,
+        featured: false,
+        tags: [
+            {
+                title: "Sushi",
+                icon: <SushiIcon/>
+            }
+        ]
     }
 ]
 
@@ -88,7 +144,7 @@ const Home = () => {
                         <a href="/" className="text-neutralBlack font-semibold hover:text-neutralGrayDark transition-colors mr-7">My orders</a>
 
                         <a href="/" className="h-12 w-12 relative flex items-center justify-center bg-primaryLight rounded-2xl hover:bg-neutralGrayLightest transition-colors mr-4">
-                            <BasketIcon/>
+                            <BasketIcon filled={true}/>
 
                             <span className="absolute -inset-y-2 right-0 text-white h-5 w-5 flex items-center justify-center text-xs font-semibold bg-primary rounded-lg">4</span>
                         </a>
@@ -145,6 +201,62 @@ const Home = () => {
                             <h5 className={`text-sm font-bold ${isSelectedCategory(category.id) ? "text-primary" : "text-neutralGrayDark"}`}>{category.title}</h5>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-8 space-y-4">
+                    <h1 className="text-xl font-semibold text-neutralBlack">Nearby restaurants</h1>
+
+                    <div className="flex flex-wrap gap-y-8 items-center justify-between">
+                        {nearbyRestaurants.map(restaurant => (
+                            <a href="/" key={restaurant.id} className="h-[21rem] w-[27rem] relative flex flex-col border border-neutralGrayLightest rounded-2xl overflow-hidden hover:shadow transition-shadow group">
+                                {restaurant.featured && (
+                                    <span className="absolute z-10 right-0 px-5 py-2 bg-primary text-sm font-semibold text-white rounded-bl-2xl uppercase">Featured</span>
+                                )}
+
+                                <img className="rounded-t-2xl group-hover:scale-105 transition-transform" src={restaurant.image} alt={restaurant.title}/>
+
+                                <div className="flex flex-col p-4 gap-y-2">
+                                    <div className="flex items-center justify-between">
+                                        <h2 className="text-lg font-bold text-neutralBlack">{restaurant.title}</h2>
+
+                                        {restaurant.order === 0 && (
+                                            <BasketIcon/>
+                                        )}
+
+                                        {restaurant.order !== 0 && (
+                                            <div className="relative mr-2">
+                                                <BasketIcon filled={true}/>
+
+                                                <span className="absolute -inset-y-2 left-3 text-white h-5 w-5 flex items-center justify-center text-xs font-semibold bg-primary border border-white rounded-lg">{restaurant.order}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="flex items-center gap-x-2">
+                                        <ClockIcon/>
+
+                                        <h5 className="text-sm font-medium text-neutralGray">{restaurant.minimumTime} min</h5>
+
+                                        <span className="text-primary text-xs">•</span>
+
+                                        <h5 className="text-sm font-medium text-neutralGray">${restaurant.minimumSum} min sum</h5>
+                                    </div>
+
+                                    <div className="mt-2 flex items-center gap-x-2">
+                                        {restaurant.tags.map(tag => (
+                                            <span className="flex items-center gap-x-1 bg-neutralGrayLightest rounded-2xl px-3 py-1 text-sm font-semibold text-neutralGrayDark">
+                                                <div className="scale-75">
+                                                    {tag.icon}
+                                                </div>
+
+                                                {tag.title}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
