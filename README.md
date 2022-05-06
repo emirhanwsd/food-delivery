@@ -27,7 +27,7 @@ npm run start
 
 ![Login](https://user-images.githubusercontent.com/30156531/167221097-61657df2-49fe-40e8-899c-3d19f756c0fc.png)
 ![Login Responsive](https://user-images.githubusercontent.com/30156531/167221095-746a2ab4-caae-474c-b72d-8e1e91bc8082.png)
-![Home Responsive](https://user-images.githubusercontent.com/30156531/167221101-29fdcf87-696a-4845-9a85-1cac3568e31b.png)
+![Home Responsive](https://user-images.githubusercontent.com/30156531/167221503-53b7db22-2d52-435b-baf0-ddb6ff59977d.png)
 
 ## 📜 License
 
