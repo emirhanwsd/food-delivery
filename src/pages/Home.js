@@ -129,7 +129,7 @@ const Home = () => {
                     <div className="hidden sm:block sm:relative">
                         <input className="h-10 text-neutralBlack pl-3 pr-10 w-56 bg-neutralGrayLightest rounded-lg focus:outline-none focus:ring-0 focus:shadow transition-shadow placeholder:text-sm placeholder-neutralGray" placeholder="Search"/>
 
-                        <span className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer hover:opacity-80 transition-opacity">
+                        <span className="absolute inset-y-0 right-0 px-3 flex items-center cursor-pointer hover:opacity-80 transition-opacity">
                             <SearchIcon/>
                         </span>
                     </div>
