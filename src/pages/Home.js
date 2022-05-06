@@ -237,7 +237,7 @@ const Home = () => {
                         {nearbyRestaurants.map(restaurant => (
                             <a href="/" key={restaurant.id} className="w-[27rem] relative flex flex-col border border-neutralGrayLightest rounded-2xl overflow-hidden hover:shadow transition-shadow group">
                                 {restaurant.featured && (
-                                    <span className="absolute z-10 right-0 px-5 py-2 bg-primary text-sm font-semibold text-white rounded-bl-2xl uppercase">Featured</span>
+                                    <span className="absolute z-10 right-0 px-5 py-2 bg-primary text-xs font-semibold text-white rounded-bl-2xl uppercase">Featured</span>
                                 )}
 
                                 <img className="rounded-t-2xl group-hover:scale-105 transition-transform" src={restaurant.image} alt={restaurant.title}/>
