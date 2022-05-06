@@ -45,7 +45,7 @@ const Login = () => {
 
                                     <span onClick={() => {
                                         setVisible(!visible)
-                                    }} className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+                                    }} className="absolute inset-y-0 right-0 px-3 flex items-center cursor-pointer">
                                         <VisibilityIcon visible={visible}/>
                                     </span>
                                 </div>
