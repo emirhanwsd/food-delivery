@@ -17,7 +17,7 @@ npm run start
 ## ⚙️ Technologies
 
 - [React](https://reactjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## 🔭 Resources
 
